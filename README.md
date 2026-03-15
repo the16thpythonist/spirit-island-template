@@ -1,3 +1,5 @@
+![MySpirit Banner](banner.png)
+
 # 🍄 MySpirit — Spirit Island Template CLI
 
 A Python CLI tool for designing custom **Spirit Island** board game components. Define spirits, power cards, adversaries, and more as simple YAML files — then compile them to print-ready HTML, PNG, and PDF.

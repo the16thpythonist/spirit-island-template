@@ -48,7 +48,14 @@ class RichHelp:
     """Renders the Spirit CLI help description."""
 
     def __rich_console__(self, console, options):
-        yield "[white bold]Spirit Island Template CLI[/white bold]"
+        yield "[white bold]Command line interface for creating custom Spirit Island character assets.[/white bold]"
         yield ""
-        yield "  Compile YAML component definitions to standalone HTML and PNG."
-        yield "  Generate card artwork using Google Gemini."
+        yield "  Define spirit boards, power cards, adversaries, and more as simple YAML files."
+        yield "  Compile them to standalone HTML and high-quality PNG images using the Spirit"
+        yield "  Island Template engine. Bootstrap new spirits with pre-filled templates to get"
+        yield "  started quickly."
+        yield ""
+        yield "  Generate card and spirit artwork using Google Gemini's image generation API"
+        yield "  (Nano Banana 2) with optional style reference images to match the Spirit Island"
+        yield "  art style. Arrange all compiled components into a print-ready A4 PDF with"
+        yield "  correct physical dimensions."
