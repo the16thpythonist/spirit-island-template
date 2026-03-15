@@ -2,3 +2,8 @@
 /Adversary_*
 /Aspect_*
 *.bak
+output/
+.env
+__pycache__/
+*.pyc
+.venv/

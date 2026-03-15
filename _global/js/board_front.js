@@ -71,7 +71,8 @@ function addImages(board) {
     }
     if(spiritImage){
         //Image now scales to fill gap. 'imageSize' allows the user to specify what % of the gap to cover
-        board.innerHTML = `<div class="spirit-image" style="background-image: url(${spiritImage}); background-size: auto ${imageSize}; height:calc(100% - ${height}); width:1700px;" ></div>` + board.innerHTML
+        const imagePosition = board.getAttribute('spirit-image-position') || 'left top';
+        board.innerHTML = `<div class="spirit-image" style="background-image: url(${spiritImage}); background-size: auto ${imageSize}; background-position: ${imagePosition}; height:calc(100% - ${height}); width:1700px;" ></div>` + board.innerHTML
 		artistCredit[0].style.display = "block";
 		artistCredit[0].innerHTML = "Artist Credit: "+ artistCredit[0].innerHTML
     }
@@ -716,7 +717,11 @@ function parseGrowthTags(){
 							customIcon = "<span class='non-icon'>"+customOptions[2]+"</span>"
 						}else{
 							for(i = 1; i < customOptions.length; i++){
-								listIcons +="<icon class='"+customOptions[i]+" custom-growth-icon'></icon>";
+								if(customOptions[i].startsWith('no-')){
+									listIcons +="<icon class='no "+customOptions[i].substring(3)+" custom-growth-icon'></icon>";
+								}else{
+									listIcons +="<icon class='"+customOptions[i]+" custom-growth-icon'></icon>";
+								}
 							}
 							customIcon = listIcons;
 						}

@@ -1,0 +1,26 @@
+{% extends "base.html.j2" %}
+{% block content %}
+  <quick-card
+    speed="{{ component.speed.value }}"
+    cost="{{ component.cost }}"
+    name="{{ component.name }}"
+    image="{{ component.image }}"
+    elements="{{ component.elements | join(',') }}"
+    range="{{ component.range }}"
+    target="{{ component.target }}"
+    target-title="{{ component.target_title }}"
+    artist-name="{{ component.artist_name }}"
+    {%- if component.print_friendly %}
+    print-friendly="yes"
+    {%- endif %}>
+    <rules>
+      {{ component.rules }}
+    </rules>
+    {%- if component.threshold %}
+    <threshold condition="{{ component.threshold.condition }}"
+      {%- if component.threshold.text %} text="{{ component.threshold.text }}"{% endif %}>
+      {{ component.threshold.content }}
+    </threshold>
+    {%- endif %}
+  </quick-card>
+{% endblock %}

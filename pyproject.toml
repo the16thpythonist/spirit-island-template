@@ -1,0 +1,26 @@
+[project]
+name = "spirit-island-cli"
+version = "0.1.0"
+description = "CLI tool for Spirit Island Template - compile YAML to rendered components"
+requires-python = ">=3.11"
+dependencies = [
+    "rich-click>=1.8",
+    "pyyaml>=6.0",
+    "pydantic>=2.0",
+    "jinja2>=3.1",
+    "playwright>=1.40",
+    "python-dotenv>=1.0",
+    "google-genai>=1.0",
+    "fpdf2>=2.8",
+    "pillow>=10.0",
+]
+
+[project.scripts]
+myspirit = "spirit_cli.cli:cli"
+
+[tool.hatch.build.targets.wheel]
+packages = ["spirit_cli"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

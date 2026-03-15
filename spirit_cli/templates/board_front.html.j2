@@ -1,0 +1,66 @@
+{% extends "base.html.j2" %}
+{% block content %}
+  <board spirit-image="{{ component.spirit_image }}" spirit-image-scale="{{ component.spirit_image_scale }}" spirit-image-position="{{ component.spirit_image_position }}"
+    {%- if component.spirit_border %} spirit-border="{{ component.spirit_border }}"{% endif %}>
+
+    <spirit-name>{{ component.spirit_name }}</spirit-name>
+    <artist-name>{{ component.artist_name }}</artist-name>
+
+    <special-rules-container>
+      <section-title>SPECIAL RULES</section-title>
+      {% for rule in component.special_rules %}
+      <special-rules-subtitle>{{ rule.subtitle }}</special-rules-subtitle>
+      <special-rule>{{ rule.rule }}</special-rule>
+      {% endfor %}
+    </special-rules-container>
+
+    <right>
+      <growth title="{{ component.growth.title }}">
+        {% if component.growth.sub_groups %}
+          {% for sg in component.growth.sub_groups %}
+        <sub-growth title="{{ sg.title }}"{{ ' bordered' if sg.bordered else '' }}>
+            {% for g in sg.groups %}
+          <growth-group values="{{ g.values }}"
+            {%- if g.cost is not none %} cost="{{ g.cost }}"{% endif %}
+            {%- if g.tint %} tint="{{ g.tint }}"{% endif %}></growth-group>
+            {% endfor %}
+        </sub-growth>
+          {% endfor %}
+        {% elif component.growth.groups %}
+          {% for g in component.growth.groups %}
+        <growth-group values="{{ g.values }}"
+          {%- if g.cost is not none %} cost="{{ g.cost }}"{% endif %}
+          {%- if g.tint %} tint="{{ g.tint }}"{% endif %}></growth-group>
+          {% endfor %}
+        {% endif %}
+      </growth>
+
+      <presence-tracks>
+        <energy-track values="{{ component.presence_tracks.energy_track.values }}"
+          {%- if component.presence_tracks.energy_track.banner %} banner="{{ component.presence_tracks.energy_track.banner }}"{% endif %}
+          {%- if component.presence_tracks.energy_track.banner_v_scale %} banner-v-scale="{{ component.presence_tracks.energy_track.banner_v_scale }}"{% endif %}></energy-track>
+        <card-play-track values="{{ component.presence_tracks.card_play_track.values }}"
+          {%- if component.presence_tracks.card_play_track.banner %} banner="{{ component.presence_tracks.card_play_track.banner }}"{% endif %}
+          {%- if component.presence_tracks.card_play_track.banner_v_scale %} banner-v-scale="{{ component.presence_tracks.card_play_track.banner_v_scale }}"{% endif %}></card-play-track>
+      </presence-tracks>
+
+      <innate-powers>
+        {% for power in component.innate_powers %}
+        <quick-innate-power
+          name="{{ power.name }}"
+          speed="{{ power.speed.value }}"
+          range="{{ power.range }}"
+          target="{{ power.target }}"
+          target-title="{{ power.target_title }}"
+          {%- if power.note %} note="{{ power.note }}"{% endif %}>
+          {% for level in power.levels %}
+          <level threshold="{{ level.threshold }}"{{ ' long' if level.long else '' }}{{ ' text' if level.text else '' }}>
+            {{ level.content }}
+          </level>
+          {% endfor %}
+        </quick-innate-power>
+        {% endfor %}
+      </innate-powers>
+    </right>
+  </board>
+{% endblock %}

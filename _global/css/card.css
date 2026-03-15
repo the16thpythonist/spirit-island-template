@@ -41,12 +41,14 @@ card.round-border{
 
 card.fast{
   background-image: url('../images/fast-card-transparent.PNG');
+  background-size: 515px 720px;
   background-position-y: -20px;
   background-position-x: -11px;
 }
 
 card.slow{
   background-image: url('../images/slow-card-transparent.PNG');
+  background-size: 517px 721px;
   background-position-y: -20px;
   background-position-x: -12px;
 }

@@ -113,7 +113,7 @@ growth-cell-double {
 
 growth-cell icon {
   margin-bottom: 7px;
-  height: 90px;
+  height: 70px;
 }
 
 presence-node.growth {
@@ -977,8 +977,8 @@ custom-growth-icon icon.explorer {
 }
 
 icon.custom-growth-icon {
-    width: 80px;
-    height: 90px;
+    width: 60px;
+    height: 70px;
 	margin-top: 0px;
     margin-bottom: 7px;
 	background-position: bottom;

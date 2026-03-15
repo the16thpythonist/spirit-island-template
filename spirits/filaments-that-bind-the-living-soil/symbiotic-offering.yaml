@@ -1,0 +1,19 @@
+type: card
+name: "Symbiotic Offering"
+speed: fast
+cost: 1
+image: symbiotic-offering_art.png
+artist_name: "Gemini Nano Banana 2"
+elements:
+  - plant
+  - earth
+  - moon
+range: "1"
+target: "{spore}"
+target_title: "TARGET LAND"
+custom_icons:
+  spore: spore_token.png
+rules: |
+  Remove 1 {spore} from target land.
+  Another {spirit} may place 1 of their {presence} on target land.
+art_prompt: "A sacred mushroom circle in a jungle clearing, glowing mycelium forming a welcoming pattern on the ground, spiritual energy rising from interconnected fungal networks"

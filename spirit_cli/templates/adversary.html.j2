@@ -1,0 +1,24 @@
+{% extends "base.html.j2" %}
+{% block content %}
+  <quick-adversary
+    name="{{ component.name }}"
+    base-difficulty="{{ component.base_difficulty }}"
+    flag-image="{{ component.flag_image }}">
+
+    <loss-condition
+      name="{{ component.loss_condition.name }}"
+      rules="{{ component.loss_condition.rules }}"></loss-condition>
+
+    <escalation-effect
+      name="{{ component.escalation_effect.name }}"
+      rules="{{ component.escalation_effect.rules }}"></escalation-effect>
+
+    {% for level in component.levels %}
+    <level-{{ loop.index }}
+      difficulty="{{ level.difficulty }}"
+      fear-cards="{{ level.fear_cards }}"
+      name="{{ level.name }}"
+      rules="{{ level.rules }}"></level-{{ loop.index }}>
+    {% endfor %}
+  </quick-adversary>
+{% endblock %}

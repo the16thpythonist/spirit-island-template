@@ -1,0 +1,46 @@
+type: board_lore
+spirit_name: "Filaments That Bind the Living Soil"
+spirit_image: filaments-that-bind-the-living-soil_art.png
+
+custom_icons:
+  spore: spore_token.png
+
+lore_description: >
+  A vast fungal consciousness woven beneath the island's surface.
+  It connects root to root, tree to tree, feeding the land's defenders
+  while quietly decomposing anything foreign to the ecosystem.
+  <br><br>
+  Long before the Dahan arrived, the Filaments were already old — a patient,
+  sprawling intelligence that thought in seasons and spoke through the slow
+  language of chemical signals. It welcomed the Dahan as part of the island's
+  living fabric and wove them into its network of mutual sustenance.
+  <br><br>
+  Now the Invaders tear at the soil, poison the water, and sever the
+  connections that took millennia to grow. The Filaments stir with
+  something it has never felt before: urgency.
+
+setup:
+  title: "SETUP:"
+  description: >
+    Place 1 {presence} on the {jungle} with the highest number and
+    1 {presence} on the {jungle} with the lowest number.
+    Place 1 {spore} on each of those lands.
+
+play_style:
+  title: "Play Style:"
+  description: >
+    A support and control spirit that builds a passive defensive network
+    of {spore} across the island. {spore} grant Defend and fuel your
+    powers when consumed. Nourish allies with energy and extra actions
+    while quietly decomposing invader infrastructure.
+    <br><br>
+    Core tension: {spore} are both your passive defense (keep them) and
+    your fuel for active effects (spend them). Managing that economy is
+    the strategic puzzle at the heart of this spirit.
+
+complexity:
+  value: 2
+  descriptor: "Moderate"
+
+summary_of_powers:
+  values: [2, 3, 2, 5, 8]

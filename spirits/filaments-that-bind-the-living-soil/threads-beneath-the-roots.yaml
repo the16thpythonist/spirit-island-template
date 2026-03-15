@@ -1,0 +1,18 @@
+type: card
+name: "Threads Beneath the Roots"
+speed: fast
+cost: 0
+image: threads-beneath-the-roots_art.png
+artist_name: "Gemini Nano Banana 2"
+elements:
+  - plant
+  - earth
+range: "1"
+target: "{no-sand}"
+target_title: "TARGET LAND"
+custom_icons:
+  spore: spore_token.png
+rules: |
+  Place 1 {spore} on target land.
+  Push 1 {explorer} from that land.
+art_prompt: "Glowing golden fungal threads emerging from dark earth between massive tree roots, tendrils reaching upward through soil, mystical nature scene"

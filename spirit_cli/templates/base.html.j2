@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+  <link href="{{ global_prefix }}/css/global.css" rel="stylesheet" />
+  {% for css_file in css_files %}
+  <link href="{{ global_prefix }}/css/{{ css_file }}" rel="stylesheet" />
+  {% endfor %}
+  <script type="text/javascript" src="{{ global_prefix }}/js/general.js"></script>
+  {% for js_file in js_files %}
+  <script type="text/javascript" src="{{ global_prefix }}/js/{{ js_file }}"{{ ' defer' if js_file == 'card.js' else '' }}></script>
+  {% endfor %}
+  {% if custom_styles %}
+  <style>
+  {{ custom_styles }}
+  </style>
+  {% endif %}
+</head>
+<body>
+{% block content %}{% endblock %}
+</body>
+</html>

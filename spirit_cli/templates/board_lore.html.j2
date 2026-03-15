@@ -1,0 +1,31 @@
+{% extends "base.html.j2" %}
+{% block content %}
+    <board>
+        <img class="spirit-image" src="{{ component.spirit_image }}" />
+        <spirit-name>{{ component.spirit_name }}</spirit-name>
+        <lore-description>{{ component.lore_description }}</lore-description>
+        <second-section-container>
+            {% if component.setup %}
+            <setup>
+                <setup-title>{{ component.setup.title }}</setup-title>
+                <setup-description>{{ component.setup.description }}</setup-description>
+            </setup>
+            {% endif %}
+            {% if component.play_style %}
+            <play-style>
+                <play-style-title>{{ component.play_style.title }}</play-style-title>
+                <play-style-description>{{ component.play_style.description }}</play-style-description>
+            </play-style>
+            {% endif %}
+        </second-section-container>
+        <third-section-container>
+            {% if component.complexity %}
+            <complexity value="{{ component.complexity.value }}" descriptor="{{ component.complexity.descriptor }}"></complexity>
+            {% endif %}
+            {% if component.summary_of_powers %}
+            <summary-of-powers values="{{ component.summary_of_powers.values | join(',') }}"
+              {%- if component.summary_of_powers.uses %} uses="{{ component.summary_of_powers.uses }}"{% endif %}></summary-of-powers>
+            {% endif %}
+        </third-section-container>
+    </board>
+{% endblock %}

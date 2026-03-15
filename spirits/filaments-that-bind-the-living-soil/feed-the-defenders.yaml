@@ -1,0 +1,19 @@
+type: card
+name: "Feed the Defenders"
+speed: fast
+cost: 1
+image: feed-the-defenders_art.png
+artist_name: "Gemini Nano Banana 2"
+elements:
+  - plant
+  - water
+  - earth
+range: "0"
+target: "{spore}"
+target_title: "TARGET LAND"
+custom_icons:
+  spore: spore_token.png
+rules: |
+  Defend 2 in target land.
+  If another {spirit} has {presence} there, they gain 1 Energy.
+art_prompt: "Luminous mushrooms growing around indigenous warriors in a jungle, mycelium tendrils connecting them to the forest floor, nurturing energy flowing upward"

@@ -1,0 +1,34 @@
+{% extends "base.html.j2" %}
+{% block content %}
+  <aspect>
+    <aspect-name>{{ component.aspect_name }}</aspect-name>
+    <aspect-subtext>{{ component.aspect_subtext }}</aspect-subtext>
+    <aspect-container>
+      {% for rule in component.special_rules %}
+      <special-rules-subtitle>{{ rule.subtitle }}</special-rules-subtitle>
+      <special-rule>{{ rule.rule }}</special-rule>
+      {% endfor %}
+
+      {% for power in component.innate_powers %}
+      <quick-innate-power
+        name="{{ power.name }}"
+        speed="{{ power.speed.value }}"
+        range="{{ power.range }}"
+        target="{{ power.target }}"
+        target-title="{{ power.target_title }}"
+        {%- if power.note %} note="{{ power.note }}"{% endif %}>
+        {% for level in power.levels %}
+        <level threshold="{{ level.threshold }}"{{ ' long' if level.long else '' }}{{ ' text' if level.text else '' }}>
+          {{ level.content }}
+        </level>
+        {% endfor %}
+      </quick-innate-power>
+      {% endfor %}
+    </aspect-container>
+  </aspect>
+
+  {% if component.aspect_back %}
+  <aspect-back spirit-name="{{ component.aspect_back.spirit_name }}" src="{{ component.aspect_back.src }}">
+  </aspect-back>
+  {% endif %}
+{% endblock %}
