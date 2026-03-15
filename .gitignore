@@ -3,6 +3,7 @@
 /Aspect_*
 *.bak
 output/
+spirits/
 .env
 __pycache__/
 *.pyc

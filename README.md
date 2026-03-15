@@ -180,28 +180,6 @@ Then use `{spore}` anywhere in rules text, targets, or special rules. The `{no-s
 
 ---
 
-## 🏗️ Project Structure
-
-```
-spirit-island-template/
-├── _global/              # Shared CSS, JS, fonts, icons (original template)
-├── _examples/            # HTML examples (original template)
-├── spirit_cli/           # Python CLI package
-│   ├── cli/              # Command mixins and display
-│   ├── templates/        # Jinja2 HTML templates
-│   ├── models.py         # Pydantic YAML validation
-│   ├── compiler.py       # YAML → HTML → PNG pipeline
-│   ├── art.py            # Gemini API integration
-│   ├── print_layout.py   # PDF generation
-│   └── bootstrap.py      # Spirit scaffolding
-├── spirits/              # Your custom spirits (YAML + art)
-├── output/               # Compiled output (HTML, PNG, PDF)
-├── pyproject.toml        # Python project config
-└── .env                  # API keys (gitignored)
-```
-
----
-
 ## 🙏 Credits
 
 - **Original Template**: [Spirit Island Template](https://github.com/resonant-gamedesign/spirit-island-template) by resonant-gamedesign — the HTML/CSS/JS rendering engine that powers all component generation
